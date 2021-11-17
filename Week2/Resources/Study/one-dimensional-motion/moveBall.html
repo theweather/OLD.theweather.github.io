@@ -10,10 +10,26 @@
 
 <script>
 
-var velocity = 5;
+var velocity =10;
 var position = 0;
 var ball = document.getElementById('ball');
+counter = 0;
 
 // YOUR CODE 
 // ----------------
+function moveBall(time) {
+  position = position + velocity;
+  ball.style.left = position + 'px';
+  if(counter % 10 > 0) {
+    counter++;
+    return counter;
+  }
+  else{
+    console.log("counter: " + counter + " | " + "position: " + position);
+    counter++;
+    return counter;
+  }
+}
+setInterval(moveBall, 100);
+
 </script>

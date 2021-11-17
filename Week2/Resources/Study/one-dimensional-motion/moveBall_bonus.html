@@ -1,6 +1,6 @@
 <div id="ball" style="
   z-index:5;
-  position:absolute;
+  position:relative;
   left:0px;
   top:0px;
   width:50px;
@@ -15,7 +15,47 @@ var velocityY = 3;
 var positionX = 0;
 var positionY = 0;
 var ball = document.getElementById('ball');
-
+var counter = 0; //for debug purposes
+var direction = 0;
 // YOUR CODE 
 // ----------------
+function moveBall() {
+  while (direction === 0&&counter>=0&&counter<20) {
+    positionX = positionX + velocityX;
+    ball.style.left = positionX + 'px';
+    counter++;
+    direction = 0;
+    console.log("1 | Dir: " + direction + " Pos: " + positionX +" | Cou: " + counter);
+    return counter;
+  }
+  while (direction === 0&&counter === 20) {
+    positionX = positionX - velocityX;
+    ball.style.left = positionX + 'px';
+    counter--;
+    direction = 1;
+    console.log("2 | Dir: " + direction + " Pos: " + positionX +" | Cou: " + counter);
+    return counter;
+    continue;
+  }
+  while (direction === 1&&counter>0&&counter<20) {
+    positionX = positionX - velocityX;
+    ball.style.left = positionX + 'px';
+    counter--;
+    direction = 1
+    console.log("3 | Dir: " + direction + " Pos: " + positionX +" | Cou: " + counter);
+    return counter;
+  }
+  while (direction === 1&&counter === 0) {
+    positionX = positionX + velocityX;
+    ball.style.left = positionX + 'px';
+    counter++;
+    direction = 0;
+    console.log("4 | Dir: " + direction + " Pos: " + positionX +" | Cou: " + counter);
+    return counter;
+    continue;
+  }
+}
+setInterval(moveBall, 50);
+
+
 </script>
