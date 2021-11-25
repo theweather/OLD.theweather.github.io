@@ -34,13 +34,14 @@ function red(x) {
   obj["name"] = "Jake";
 
 
-```Block Scope```
+/* Block Scope
 
-```Types of variables```
-```var```
-```const```
-```argument```
-```let - limited by {} curly brackets/braces```
+Types of variables
+
+var
+const
+argument
+let - limited by {} curly brackets/braces */
 
   function blue(x) {
   var y = 0;
@@ -54,8 +55,84 @@ function red(x) {
 var x = 1;
 console.log('result = ' + blue(x));
 
-'''Equals Operator'''
-<blockquote>for objects on the heap but not referenced by anything from then stack, the heap will do garbage collection and remove the object from the stack.</blockquote>
+/*Equals Operator
+for objects on the heap but not referenced by anything from then stack, the heap will do garbage collection and remove the object from the stack.
+
+Numbers are objects that DO have a place on the stack, so they are copied in instead of referenced in.*/
+
+```x is the same object whether called with a or b```
+
+let a = {x : 1}
+
+const f1 = function f1(b){
+  b.x = 3
+  return b; ```this line is optional for getting x from b to a```
+}
+let result = f1(a)
+console.log(result)
+
+```Pass a function into another function:```
+var red = function red(){
+  return 3.141;
+}
+const blue = function blue(f){
+  let y = f();
+  return y;
+}
+var x = blue(red);
+
+/*String and Numbers
+
+This concatenates b onto a, so a = 3322*/
+
+let a = '22' ```string```
+let b = 33; ```number```
+a = a + b;
+b = b + true; ```b = 34, because true is parsed as 1```
+b = b + Number(a); ```b is 55```
+/*Adding a word string to a number will result in a NaN (not a number) error.*/
+
+
+const locations = [ ];
+const makePoint = function makePoint(x, y) {
+    let p = { x: x, y: y};
+    return p;
+}
+const factory = function factory(n){
+  for(let i = 0;i < n; i++){
+    let p = makePoint(i,i);
+    locations.push(p);
+  }
+}
+factory(3);
+
+```Factory Functions```
+
+console.log('locations: ' + JSON.stringify(locations));
+
+const locations = [ ];
+const makePoint = function makePoint(x, y) {
+    let p = { x: x, y: y};
+    return p;
+}
+const factory = function factory(n){
+  for(let i = 0;i < n; i++){
+    let p = makePoint(i,i);
+    locations.push(p);
+  }
+}
+factory(3);
+
+console.log('locations: ' + JSON.stringify(locations));
+
+
+
+
+
+
+
+
+
 
 
 
