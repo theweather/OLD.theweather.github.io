@@ -125,6 +125,22 @@ factory(3);
 
 console.log('locations: ' + JSON.stringify(locations));
 
+```Hoisting functions and vars```
+
+```function declaration```
+function red(){return 1;} 
+
+```function expression```
+var blue = function(){return 2;}
+var blue = function blue(){return 2;}
+/* Even though the function hasn't been called yet, it's read by the interpreter. It's been hoisted.
+If const is used instead, there will be a reference error. It will say blue is not defined.
+
+ways to fix:
+read function first, then execute.*/
+
+/*We can use Chrome as a powerful web debugger. The dev tools have a callstack area in Sources with which one can step through the stack.*/ 
+
 
 
 
