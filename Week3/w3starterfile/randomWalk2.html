@@ -21,6 +21,15 @@
     // However this won't quite work if we call factory multiple times
     // creating different numbers of balls.
     // Can you make it work more generally?
+
+function getRandomColor() {
+  var letters = '0123456789ABCDEF';
+  var color = '#';
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
     function update() {
       let nballs = balls.length;
       // total length of this array
@@ -36,13 +45,13 @@
     }
     // Can you update this so we can paint with more colors?
     function randomColor() {
-      const colors = ["red", "green", "blue", "yellow"];
+      const colors = [getRandomColor()];
       return colors[Math.floor(Math.random() * 5)];
     }
     function factory(total) {
       let start = 300;
       for (let i = 0; i < total; i++) {
-        makeBall(start, start, randomColor());
+        makeBall(start, start, getRandomColor());
       }
       totalFactoryOutput += total;
     }

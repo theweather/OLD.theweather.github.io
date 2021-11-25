@@ -7,6 +7,7 @@
     const y = [];
     const balls = []; // array to hold all free balls
     const stepSize = 5; // step size every update
+    var randomColor = Math.floor(Math.random()*16777215).toString(16);
     let velocity_x = [];
     let velocity_y = [];
     let gravity = 1;
@@ -40,7 +41,7 @@
       for (let i = 0; i < total; i++) {
         let velx = Math.floor(getRandom(20) - 10);
         let vely = Math.floor(getRandom(20) - 10);
-        makeBall(getRandom(800), getRandom(400), "blue", velx, vely, 0);
+        makeBall(getRandom(800), getRandom(400), randomColor, velx, vely, 0);
       }
     }
   </script>
