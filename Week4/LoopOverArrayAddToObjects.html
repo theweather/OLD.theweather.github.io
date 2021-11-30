@@ -1,21 +1,18 @@
 <script>
 
-/*
-Instructions
-Compare Objects
-- Define a function, `compareCities`, that accepts two objects as arguments.
+/* contacts = [{name:'amy', email:'amy@mit.edu', course: 'web dev'}, {name:'fred', email:'fred@mit.edu', course: 'web dev'}, {name:'anne', email:'anne@mit.edu', course: 'web dev'}];
+contacts[2].course = 'front end dev';
+contacts[3] = {name: 'batya', email: 'batya@mit.edu', course: 'front end dev'} */
 
-compareCities({ name: 'Dresden' }, { name: 'Dresden' }) // -> true
-compareCities({ name: 'Raleigh' }, { name: 'Raleigh', income_pc: 1200000 }) // -> false
-*/
 //Array flattenr activity
 // Define a function arrayFlattener with a 2 dimensional array as parameter:
 // example of 2 dimensional array: [1,[2,3],4,5]
+
 function arrayFlattener(Array2D) {
   for(let i = 0; i < Array2D.length; i++) {
     if (Array2D[i].length > 1) {
-      for (let i = 0; i < Array2D[i].length; i++) {
-        Array2D[i] = Array2D.push(Array2D[i]);
+      for (let j = 0; j < Array2D[j].length; j++) {
+        Array2D[j] = Array2D.push(Array2D[j]);
       }
     }
   }
@@ -31,8 +28,6 @@ if (typeof module !== "undefined") {
     arrayFlattener,
   };
 }
-
-
 
 
 </script>
